@@ -16,7 +16,7 @@ class Solution {
         ListNode two = l2;
         while (one != null || two != null) {
             if (head == null) {
-                if (one.val >= two.val) {
+                if (two == null || (one != null && one.val <= two.val)) {
                     head = new ListNode(one.val);
                     one = one.next;
                 } else {
@@ -37,6 +37,8 @@ class Solution {
         }
         return head;
     }
+
+
 }
 class ListNode {
     int val;
