@@ -20,7 +20,6 @@ class SolutionTest {
         node_3.next = node_4;
 
         ListNode node = node_1;
-        printListNode(node);
         printListNode(new Solution().mergeTwoLists(node, node));
     }
 

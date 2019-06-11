@@ -14,10 +14,7 @@ class Solution {
         ListNode present = null;
         ListNode one = l1;
         ListNode two = l2;
-        while (
-                (one != null && one.next != null)
-                || (two != null && two.next != null)
-        ) {
+        while (one != null || two != null) {
             if (head == null) {
                 if (one.val >= two.val) {
                     head = new ListNode(one.val);
@@ -29,7 +26,7 @@ class Solution {
                 present = head;
                 continue;
             }
-            if (two == null || (one != null && one.val >= two.val)) {
+            if (two == null || (one != null && one.val <= two.val)) {
                 present.next = new ListNode(one.val);
                 one = one.next;
             } else {
