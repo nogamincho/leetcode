@@ -4,19 +4,26 @@ package nogamincho.w_203;
 //Output: 1->2->3->4->5
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
+        if (head == null) {
+            return head;
+        }
         ListNode present = head;
         ListNode previous = null;
 
         do {
+            if (previous == null && present.val == val) {
+                head = present.next;
+                present = present.next;
+                continue;
+            }
             if (present.val == val) {
                 previous.next = present.next;
-                previous = present;
             } else {
                 previous = present;
-                present = present.next;
             }
-        } while (present != null);
+            present = present.next;
 
+        } while (present != null);
         return head;
     }
 }

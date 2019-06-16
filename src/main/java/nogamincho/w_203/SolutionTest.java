@@ -9,8 +9,30 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SolutionTest {
     Solution solution = new Solution();
+
     @Test
     void someTest() {
+        ListNode head = createNode(new int[]{1, 2, 6,3,4,5,6});
+        ListNode node = solution.removeElements(head, 6);
+        while(node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
+    }
+
+    @Test
+    void someTest2() {
+        ListNode head = createNode(new int[]{1,2,2,1});
+        ListNode node = solution.removeElements(head, 2);
+        while(node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
+    }
+
+    @Test
+    @Disabled
+    void example() {
         ListNode node = createNode(new int[]{1, 2, 3});
         do {
             System.out.println(node.val);
