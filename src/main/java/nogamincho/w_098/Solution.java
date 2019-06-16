@@ -4,7 +4,7 @@ import java.util.Optional;
 
 class Solution {
     public boolean isValidBST(TreeNode root) {
-        return !recursive(root);
+        return root == null || !recursive(root);
     }
     private boolean recursive(TreeNode node) {
         TreeNode left = node.left;

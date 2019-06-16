@@ -15,7 +15,7 @@ class SolutionTest {
     private Solution solution = new Solution();
     @Test
     void someTest() {
-        List<Integer> integers = Arrays.asList(1,2,3);
+        List<Integer> integers = Arrays.asList(2,1,3);
         TreeNode result = recursive(new TreeNode(integers.get(0)), integers, 0);
         assertTrue(solution.isValidBST(result));
     }
@@ -26,6 +26,17 @@ class SolutionTest {
         assertFalse(solution.isValidBST(result));
     }
 
+    @Test
+    void someTest3() {
+        assertTrue(solution.isValidBST(null));
+    }
+
+    @Test
+    void someTest4() {
+        List<Integer> integers = Arrays.asList(10,5,15,null,null,6,20);
+        TreeNode result = recursive(new TreeNode(integers.get(0)), integers, 0);
+        assertFalse(solution.isValidBST(result));
+    }
 
     TreeNode recursive (TreeNode node, List<Integer> nums, int idx) {
         if (2 * idx + 1 >= nums.size()) {
