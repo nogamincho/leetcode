@@ -8,9 +8,9 @@ class SolutionTest {
     private Solution solution = new Solution();
     @Test
     @Disabled
-    void someTest() {
+    void someTest1() {
         assertEquals(1,1);
-        assertEquals(1,1);
+        assertTrue(true);
+        assertTrue(false);
     }
-
 }
