@@ -11,6 +11,6 @@ class SolutionTest {
     void someTest1() {
         assertEquals(1,1);
         assertTrue(true);
-        assertTrue(false);
+        assertFalse(false);
     }
 }
