@@ -38,6 +38,20 @@ class SolutionTest {
         assertFalse(solution.isValidBST(result));
     }
 
+    @Test
+    @Disabled
+    void someTest5() {
+        List<Integer> integers = Arrays.asList(10,5,15,null,16,6,20);
+        TreeNode result = recursive(new TreeNode(integers.get(0)), integers, 0);
+        assertFalse(solution.isValidBST(result));
+    }
+    @Test
+    void someTest6() {
+        List<Integer> integers = Arrays.asList(3,1,5,0,2,4,6);
+        TreeNode result = recursive(new TreeNode(integers.get(0)), integers, 0);
+        assertTrue(solution.isValidBST(result));
+    }
+
     TreeNode recursive (TreeNode node, List<Integer> nums, int idx) {
         if (2 * idx + 1 >= nums.size()) {
             return node;
