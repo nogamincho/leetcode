@@ -4,23 +4,19 @@ import java.util.function.IntBinaryOperator;
 
 class Solution {
     public int maxDepth(TreeNode root) {
-        return recursive(root);
-    }
-
-    int recursive(TreeNode node) {
-        if (node == null)
+        if (root == null)
             return 0;
-        TreeNode left = node.left;
-        TreeNode right = node.right;
+        TreeNode left = root.left;
+        TreeNode right = root.right;
         if (left == null && right == null ) {
             return 1;
         }
         if (left == null)
-            return 1 + recursive(right);
+            return 1 + maxDepth(right);
         if (right == null)
-            return 1 + recursive(left);
+            return 1 + maxDepth(left);
 
-        return 1 + Math.max(recursive(left), recursive(right));
+        return 1 + Math.max(maxDepth(left), maxDepth(right));
     }
 }
 class TreeNode {

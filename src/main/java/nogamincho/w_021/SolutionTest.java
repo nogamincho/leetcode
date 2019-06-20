@@ -23,7 +23,7 @@ class SolutionTest {
         printListNode(new Solution().mergeTwoLists(node, node));
     }
 
-    void printListNode ( ListNode node) {
+    void printListNode (ListNode node) {
         do {
             System.out.println(node.val);
         } while((node = node.next) != null);
